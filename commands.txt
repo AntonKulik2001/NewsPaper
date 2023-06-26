@@ -1,0 +1,59 @@
+from news.models import *
+
+u1 = User.objects.create_user(username='Alex')
+u2 = User.objects.create_user(username='Svetlana')
+
+Author.objects.create(authorUser=u1)
+Author.objects.create(authorUser=u2)
+
+Category.objects.create(name='Sport')
+Category.objects.create(name='Games')
+Category.objects.create(name='IT')
+Category.objects.create(name='Policy')
+Category.objects.create(name='Life')
+
+aut1 = Author.objects.get(pk=1)
+aut2 = Author.objects.get(pk=2)
+
+Post.objects.create(author=aut1, categoryType='NW', title='Принят новый закон о призыве военнообязанных через Госуслуги', text='Закон принят в третьем чтении о новом формате получения повесток...')
+Post.objects.create(author=aut2, categoryType='AR', title='Средство от любых болезний знакомое со времен СССР', text='Пройдет любой недуг, для этого нужно всего лишь...')
+Post.objects.create(author=aut2, categoryType='AR', title='Зависимость людей от видеоигр', text='Молодежь в наше время совсем помешалась на своих игрульках...')
+
+Post.objects.get(pk=1).postCategory.add(Category.objects.get(pk=4))
+Post.objects.get(pk=1).postCategory.add(Category.objects.get(pk=5))
+Post.objects.get(pk=2).postCategory.add(Category.objects.get(pk=5))
+Post.objects.get(pk=2).postCategory.add(Category.objects.get(pk=1))
+Post.objects.get(pk=3).postCategory.add(Category.objects.get(pk=3))
+Post.objects.get(pk=3).postCategory.add(Category.objects.get(pk=2))
+
+Comment.objects.create(commentPost=Post.objects.get(pk=1), commentUser=Author.objects.get(pk=2).authorUser, text='Ужас!')
+Comment.objects.create(commentPost=Post.objects.get(pk=2), commentUser=Author.objects.get(pk=1).authorUser, text='В чем секрет?')
+Comment.objects.create(commentPost=Post.objects.get(pk=2), commentUser=Author.objects.get(pk=2).authorUser, text='В правде, брат!')
+Comment.objects.create(commentPost=Post.objects.get(pk=3), commentUser=Author.objects.get(pk=1).authorUser, text='Бред!')
+Comment.objects.create(commentPost=Post.objects.get(pk=3), commentUser=Author.objects.get(pk=2).authorUser, text='Тебе не понять')
+
+Post.objects.get(pk=1).dislike()
+Post.objects.get(pk=1).dislike()
+Post.objects.get(pk=1).dislike()
+Post.objects.get(pk=2).like()
+Post.objects.get(pk=2).like()
+Post.objects.get(pk=3).dislike()
+Comment.objects.get(pk=1).like()
+Comment.objects.get(pk=6).dislike()
+Comment.objects.get(pk=7).dislike()
+
+Author.objects.get(pk=1).update_rating()
+Author.objects.get(pk=2).update_rating()
+
+a = Author.objects.order_by('-ratingAuthor')[:1]
+
+for i in a:
+     i.ratingAuthor
+     i.authorUser.username
+
+best = Author.objects.order_by('-ratingAuthor')[:1]
+
+Post.objects.filter(pk=best).values('dateCreation__date', 'author__authorUser__username', 'rating', 'title')
+Post.objects.get(pk=best).preview()
+
+Post.objects.get(pk=best).comment_set.all().values('commentTime__date', 'commentUser__username', 'rating', 'text')

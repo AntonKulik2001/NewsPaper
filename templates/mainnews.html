@@ -1,0 +1,89 @@
+{% extends 'flatpages/default.html'%}
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block title %}
+News
+{% endblock title %}
+
+{% block content %}
+
+    <form action="" method="get">
+        {{ filterset.form.as_p }}
+        <input type="submit" value="Найти" />
+    </form>
+
+    <hr>
+
+    {% if perms.news.add_post %}
+    <a href="{% url 'News_create' %}">Добавить Новость</a>
+    <a href="{% url 'Articles_create' %}">Добавить Статью</a>
+    {% endif %}
+
+
+    {% if posts %}
+    <table>
+        <tr>
+            <td><h1>НОВОСТИ</h1></td>
+            <td><h1><p style="text-indent:1060px">{{posts|length}}</p></h1></td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td><h1>Заголовок</h1></td>
+            <td><h1>Предосмотр</h1></td>
+            <td><h1>Категории</h1></td>
+            <td><h1>Дата</h1></td>
+            {% if perms.news.change_post or perms.news.delete_post %}
+            <td>Действия</td>
+            {% endif %}
+        </tr>
+
+        {% for news in posts %}
+        <tr>
+            <td><h3><a href="{% url 'Text_news' pk=news.id %} ">{{ news.title|censor }}</a></h3></td>
+            <td><h3>{{ news.text|truncatechars:20|censor }}</h3></td>
+            <td>
+            {% for category in news.postCategory.all %}
+                <a href="{% url 'category_list' category.id %}">{{ category.name }}</a>
+            {% endfor %}
+            </td>
+            <td><h3>{{ news.dateCreation|date:'d m Y' }}</h3></td>
+
+            <td>
+                {% if perms.news.change_post %}
+                <a href="{% url 'News_update' pk=news.id %}">Изменить</a>
+                {% endif %}
+                {% if perms.news.delete_post %}
+                <a href="{% url 'News_delete' news.id %}">Удалить</a>
+                {% endif %}
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% else %}
+        <h2>Новостей нет</h2>
+    {% endif %}
+
+    {% if page_obj.has_previous %}
+        <a href="?{% url_replace page=1 %}">1</a>
+        {% if page_obj.previous_page_number != 1 %}
+            ...
+            <a href="?{% url_replace page=page_obj.previous_page_number %}">{{ page_obj.previous_page_number }}</a>
+        {% endif %}
+    {% endif %}
+
+    {{ page_obj.number }}
+
+    {% if page_obj.has_next %}
+        <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+        {% if paginator.num_pages != page_obj.next_page_number %}
+            ...
+            <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+        {% endif %}
+    {% endif %}
+
+{% endblock content %}

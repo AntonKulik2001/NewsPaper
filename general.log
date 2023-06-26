@@ -1,0 +1,103 @@
+2023-06-26 20:10:23,556 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:10:24,633 WARNING basehttp "GET / HTTP/1.1" 404 2382
+2023-06-26 20:10:24,784 WARNING basehttp "GET / HTTP/1.1" 404 2382
+2023-06-26 20:10:27,012 INFO basehttp "GET /news/116 HTTP/1.1" 200 2204
+2023-06-26 20:10:27,055 INFO basehttp "GET /news/116 HTTP/1.1" 200 2204
+2023-06-26 20:10:27,539 INFO basehttp "GET /news/ HTTP/1.1" 200 7602
+2023-06-26 20:10:27,605 INFO basehttp "GET /news/ HTTP/1.1" 200 7602
+2023-06-26 20:10:34,161 WARNING basehttp "GET / HTTP/1.1" 404 2382
+2023-06-26 20:10:34,380 WARNING basehttp "GET / HTTP/1.1" 404 2382
+2023-06-26 20:10:37,732 INFO basehttp "GET /news/ HTTP/1.1" 200 7602
+2023-06-26 20:10:37,798 INFO basehttp "GET /news/ HTTP/1.1" 200 7602
+2023-06-26 20:10:38,739 INFO basehttp "GET /news/116 HTTP/1.1" 200 2204
+2023-06-26 20:10:38,782 INFO basehttp "GET /news/116 HTTP/1.1" 200 2204
+2023-06-26 20:10:39,268 INFO basehttp "GET /news/ HTTP/1.1" 200 7602
+2023-06-26 20:10:39,334 INFO basehttp "GET /news/ HTTP/1.1" 200 7602
+2023-06-26 20:13:26,772 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:13:27,690 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:22:35,624 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:22:46,044 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:23:25,875 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:24:59,678 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:25:00,330 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:25:10,798 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:25:11,410 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:25:15,332 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:25:16,021 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:25:18,857 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:25:19,527 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:25:23,433 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:25:24,046 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:25:27,423 WARNING log Not Found: /
+2023-06-26 20:25:27,423 WARNING basehttp "GET / HTTP/1.1" 404 2382
+2023-06-26 20:25:27,573 WARNING log Not Found: /
+2023-06-26 20:25:27,574 WARNING basehttp "GET / HTTP/1.1" 404 2382
+2023-06-26 20:25:34,864 INFO basehttp "GET /news/ HTTP/1.1" 200 7602
+2023-06-26 20:25:34,928 INFO basehttp "GET /news/ HTTP/1.1" 200 7602
+2023-06-26 20:25:36,179 INFO basehttp "GET /news/116 HTTP/1.1" 200 2204
+2023-06-26 20:25:36,227 INFO basehttp "GET /news/116 HTTP/1.1" 200 2204
+2023-06-26 20:25:36,933 INFO basehttp "GET /news/ HTTP/1.1" 200 7602
+2023-06-26 20:26:07,161 WARNING log Not Found: /
+2023-06-26 20:26:07,162 WARNING basehttp "GET / HTTP/1.1" 404 2382
+2023-06-26 20:26:07,307 WARNING log Not Found: /
+2023-06-26 20:26:07,307 WARNING basehttp "GET / HTTP/1.1" 404 2382
+2023-06-26 20:26:46,752 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\news\views.py changed, reloading.
+2023-06-26 20:26:47,367 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:26:52,132 ERROR log Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\template\response.py", line 111, in render
+    self.content = self.rendered_content
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\template\response.py", line 87, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\template\response.py", line 69, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: mainnews1.html, news/post_list.html
+2023-06-26 20:26:52,134 ERROR basehttp "GET /news/ HTTP/1.1" 500 88258
+2023-06-26 20:26:52,208 ERROR log Internal Server Error: /news/
+Traceback (most recent call last):
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\template\response.py", line 111, in render
+    self.content = self.rendered_content
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\template\response.py", line 87, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\template\response.py", line 69, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\anton\Desktop\курс\Django\news\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: mainnews1.html, news/post_list.html
+2023-06-26 20:26:52,211 ERROR basehttp "GET /news/ HTTP/1.1" 500 87177
+2023-06-26 20:27:11,140 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\news\views.py changed, reloading.
+2023-06-26 20:27:11,782 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:28:16,447 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:28:17,073 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:28:52,416 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:28:53,046 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:29:04,575 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:29:05,197 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:30:33,457 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:30:34,119 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:31:03,054 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:31:03,691 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:32:03,829 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:32:04,559 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:36:01,240 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:36:19,854 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\news\views.py changed, reloading.
+2023-06-26 20:36:20,463 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:37:37,408 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:37:38,260 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:38:39,577 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:39:20,784 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:39:21,407 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 20:39:36,285 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\newspaper\settings.py changed, reloading.
+2023-06-26 20:39:36,894 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 21:16:09,370 INFO autoreload C:\Users\anton\Desktop\курс\Django\newspaper\news\views.py changed, reloading.
+2023-06-26 21:16:10,286 INFO autoreload Watching for file changes with StatReloader
